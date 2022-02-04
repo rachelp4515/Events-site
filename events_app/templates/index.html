@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Events</h1>
+
+<a href="/create">+ New Event</a>
+
+
+
+{% for event in events %}
+<div class="event-container">
+    <h3> <a href="/event/{{ event.id }}">{{ event.title }}</a></h3>
+    <p>Event Description: {{ event.desc }}</p>
+
+</div>
+{%endfor%}
+
+
+
+{% endblock %}

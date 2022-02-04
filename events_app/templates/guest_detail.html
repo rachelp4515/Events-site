@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<a href="/">Home</a>
+
+<!-- 
+    TODO: Use the guest object to display the correct name, email, phone, and
+    events attending
+-->
+<h1>Name: {{guest.name}}</h1>
+<p><strong>Email</strong> {{guest.email}}</p>
+<p><strong>Phone:</strong>{{guest.phone}}</p>
+
+
+<h2>Events Attending:</h2>
+
+{% for event in guest.events_attending %}
+
+<ul>
+    <li> <a href="/event/{{event.id}}"> {{event.title}} </a></li>
+</ul>
+{%endfor%}
+<!-- <ul>
+    <li><a href="/event/1">Zoom Party!</a></li>
+    <li><a href="/event/2">Picnic in the Park</a></li>
+</ul> -->
+
+{% endblock %}
